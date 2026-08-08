@@ -1,0 +1,6 @@
+# The ZK assets (vault + signet prover keys) are 100-280 MB per file — over Vercel's 100 MB file
+# cap — so they're hosted on object storage and fetched via NEXT_PUBLIC_ZK_CONFIG_ORIGIN.
+public/keys
+public/zkir
+public/compiler
+public/signet

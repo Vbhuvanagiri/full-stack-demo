@@ -1,0 +1,148 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@theme inline {
+  --: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+
+  /* Figma design colors */
+  --color-brand-50: var(--brand-50);
+  --color-brand-100: var(--brand-100);
+  --color-brand-950: var(--brand-950);
+  --color-pastels-polar-200: var(--pastels-polar-200);
+  --color-pastels-green-white-200: var(--pastels-green-white-200);
+  --color-pastels-mercury-100: var(--pastels-mercury-100);
+  --color-dark-neutral-100: var(--dark-neutral-100);
+  --color-dark-neutral-50: var(--dark-neutral-50);
+  --color-dark-neutral-200: var(--dark-neutral-200);
+  --color-dark-neutral-300: var(--dark-neutral-300);
+  --color-dark-neutral-400: var(--dark-neutral-400);
+  --color-dark-neutral-500: var(--dark-neutral-500);
+  --color-pastels-polar-100: var(--pastels-polar-100);
+  --color-pastels-green-white-300: var(--pastels-green-white-300);
+  --color-pastels-mercury-400: var(--pastels-mercury-400);
+  --color-pastels-swiss-coffee-50: var(--pastels-swiss-coffee-50);
+  --color-pastels-swiss-coffee-400: var(--pastels-swiss-coffee-400);
+  --color-success-500: var(--success-500);
+  --color-tundora-300: var(--tundora-300);
+  --color-tundora-400: var(--tundora-400);
+  --color-tundora-50: var(--tundora-50);
+  --color-clam-shell-100: var(--clam-shell-100);
+  --color-clam-shell-500: var(--clam-shell-500);
+  --color-pastels-swiss-coffee-200: var(--pastels-swiss-coffee-200);
+  --color-pastels-pampas-500: var(--pastels-pampas-500);
+  --color-stone-100: var(--stone-100);
+  --color-stone-600: var(--stone-600);
+  --color-stone-700: var(--stone-700);
+  --color-red-500: var(--red-500);
+  --color-clam-shell-300: var(--clam-shell-300);
+  --color-wf-base-700: var(--wf-base-700);
+}
+
+:root {
+  /* Figma design colors */
+  --brand-50: #f2ddc4;
+  --brand-100: #f2e0c5;
+  --brand-950: #eaeec9;
+  --pastels-polar-200: #f2fcfb;
+  --pastels-green-white-200: #f0f4f0;
+  --pastels-mercury-100: #f9f6f6;
+  --dark-neutral-50: #c6b3b2;
+  --dark-neutral-100: #b49e9e;
+  --dark-neutral-200: #a28b8a;
+  --dark-neutral-300: #8e7777;
+  --dark-neutral-400: #786767;
+  --dark-neutral-500: #625757;
+  --pastels-polar-100: #f6fdfd;
+  --pastels-green-white-300: #ebf0ea;
+  --pastels-mercury-400: #eae7e7;
+  --pastels-swiss-coffee-50: #fdfcfc;
+  --pastels-swiss-coffee-400: #eae1e0;
+  --success-500: #17b26a;
+  --tundora-300: #6c6060;
+  --tundora-400: #5c5353;
+  --tundora-50: #9c8686;
+  --clam-shell-100: #f3edea;
+  --clam-shell-500: #cbb7ad;
+  --pastels-swiss-coffee-200: #f3eeee;
+  --pastels-pampas-500: #f6f4f1;
+  --stone-100: #f5f0ee;
+  --stone-600: #625757;
+  --stone-700: #4c4646;
+  --red-500: #fb2c36;
+  --clam-shell-300: #dfd2cb;
+  --wf-base-700: #4a5468;
+}
+@layer base {
+  * {
+    @apply border-dark-neutral-50 outline-dark-neutral-50;
+  }
+  body {
+    @apply bg-white text-stone-700;
+  }
+  html,
+  body {
+    @apply overflow-x-hidden;
+  }
+
+  /* Base typography styles */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold;
+  }
+
+  /* Monospace for numbers and values */
+  .font-mono-value {
+    @apply font-mono;
+  }
+}
+
+@layer utilities {
+  .gradient-bg-main {
+    background: linear-gradient(180deg, #f9f8f1 0%, #f1f9f8 50%, #f8f1f9 100%);
+  }
+
+  .gradient-bg-swap {
+    background: linear-gradient(
+      180deg,
+      var(--pastels-green-white-200) 0%,
+      var(--pastels-mercury-100) 100%
+    );
+  }
+
+  .gradient-popover {
+    background: linear-gradient(
+      200deg,
+      var(--pastels-green-white-300, #ebf0ea) 2.62%,
+      var(--pastels-mercury-400, #eae7e7) 62.3%,
+      var(--pastels-swiss-coffee-400, #eae1e0) 97.38%
+    );
+  }
+
+  /* Custom scrollbar for better table scrolling */
+  .scroll-smooth-table {
+    scroll-behavior: smooth;
+  }
+
+  .scroll-smooth-table::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .scroll-smooth-table::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 4px;
+  }
+
+  .scroll-smooth-table::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+  }
+
+  .scroll-smooth-table::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+}

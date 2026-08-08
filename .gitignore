@@ -1,0 +1,58 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files
+.env*
+!.env.example
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+# Next.js build cache
+.next/
+*.tsbuildinfo
+.turbo/
+.env*.local
+
+# Midnight generated assets, provisioned locally from the compiled
+# @midnight-examples/erc20-vault-contract (zk keys/zkir + compiled contract JS)
+public/keys/
+public/zkir/
+public/compiler/
+public/signet/
+# managed contract: keep the compiled JS module, drop the large zk assets
+lib/midnight/managed/*/keys/
+lib/midnight/managed/*/zkir/
+lib/midnight/managed/*/compiler/
