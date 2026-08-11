@@ -8,6 +8,12 @@ function getRedisClient(): Redis {
     return cachedRedisClient;
   }
   const env = getFullEnv();
+  if (!env.REDIS_URL || !env.REDIS_TOKEN) {
+    throw new Error(
+      'Redis is required for Solana bridge transaction tracking. Set UPSTASH_REDIS_REST_URL ' +
+        'and UPSTASH_REDIS_REST_TOKEN (or the KV_REST_API_* pair). Grab a free database at upstash.com.',
+    );
+  }
   cachedRedisClient = new Redis({
     url: env.REDIS_URL,
     token: env.REDIS_TOKEN,

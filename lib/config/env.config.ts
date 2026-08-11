@@ -38,8 +38,10 @@ const serverEnvSchema = z.object({
     )
     .optional(),
   INFURA_API_KEY: z.string().min(1, 'Infura API key is required'),
-  REDIS_URL: z.string().min(1, 'Redis URL is required'),
-  REDIS_TOKEN: z.string().min(1, 'Redis token is required'),
+  // Read only by the Solana bridge's tx tracking (tx-registry.ts), which guards for
+  // them at point of use. The Midnight vault flow reads neither.
+  REDIS_URL: z.string().optional(),
+  REDIS_TOKEN: z.string().optional(),
 });
 
 // Full environment schema (client + server)
